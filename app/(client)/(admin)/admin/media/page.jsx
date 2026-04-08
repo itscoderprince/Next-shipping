@@ -41,7 +41,7 @@ const MediaPage = () => {
   // ✅ fixed query string (& instead of &&)
   const fetchMedia = async (page, deleteType) => {
     const { data } = await axios.get(
-      `/api/media?page=${page}&limit=15&deleteType=${deleteType}`,
+      `/api/media?page=${page}&limit=18&deleteType=${deleteType}`,
     );
     return data;
   };
@@ -78,6 +78,7 @@ const MediaPage = () => {
     setSelectAll(false);
     setSelectedMedia([]);
   };
+
   const handleSelectAll = () => {
     setSelectAll(!selectAll);
   };

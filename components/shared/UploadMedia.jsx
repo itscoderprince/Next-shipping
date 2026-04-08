@@ -53,7 +53,7 @@ const UploadMedia = ({ isMultiple = false, onUpload }) => {
       }}
       options={{
         multiple: isMultiple,
-        sources: ["local", "url", "google_drive"],
+        sources: ["local", "url", "google_drive", "istock", "unsplash"],
       }}
     >
       {({ open }) => (
