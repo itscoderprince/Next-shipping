@@ -1,1 +1,0 @@
-pnpm dlx shadcn@latest init --preset b5w5znRRa --template next

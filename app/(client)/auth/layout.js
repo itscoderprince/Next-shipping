@@ -2,7 +2,7 @@
 export default function Layout({ children }) {
     return (
         <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10">
-            <div className="w-full max-w-sm sm:max-w-md">
+            <div className="w-full max-w-md sm:max-w-lg">
                 {children}
             </div>
         </div>

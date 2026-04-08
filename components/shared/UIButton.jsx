@@ -23,7 +23,7 @@ const UIButton = ({
   return (
     <Button
       className={cn(
-        "relative transition-all duration-300 font-heading font-semibold rounded-lg h-10 px-6",
+        "relative transition-all duration-300 font-heading font-semibold rounded-lg cursor-pointer",
         // Default Violet Theme for primary buttons
         variant === "default" && "bg-violet-600 hover:bg-violet-700 text-white shadow-sm hover:shadow-violet-200/50 hover:shadow-xl active:scale-[0.98]",
         loading && "text-transparent pointer-events-none",

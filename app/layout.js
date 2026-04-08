@@ -1,5 +1,7 @@
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "@/components/ui/sonner";
+import StoreProvider from "@/store/StoreProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -17,7 +19,8 @@ export const metadata = {
     template: "%s | Modern Store",
     default: "Modern Store | Premium Ecommerce Experience",
   },
-  description: "Discover a curated collection of premium products at our modern ecommerce platform.",
+  description:
+    "Discover a curated collection of premium products at our modern ecommerce platform.",
 };
 
 export default function RootLayout({ children }) {
@@ -27,7 +30,10 @@ export default function RootLayout({ children }) {
       className={`${inter.variable} ${outfit.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">
-        {children}
+        <StoreProvider>
+          {children}
+          <Toaster />
+        </StoreProvider>
       </body>
     </html>
   );
