@@ -2,6 +2,7 @@ import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import StoreProvider from "@/store/StoreProvider";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -27,13 +28,21 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${inter.variable} ${outfit.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">
-        <StoreProvider>
-          {children}
-          <Toaster />
-        </StoreProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <StoreProvider>
+            {children}
+            <Toaster />
+          </StoreProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

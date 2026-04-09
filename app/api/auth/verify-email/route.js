@@ -1,5 +1,5 @@
 import { connectDB } from "@/configs/connectDB";
-import { catchError, response } from "@/lib/helper";
+import { catchError, response } from "@/lib/server-helper";
 import userModel from "@/models/user.model";
 import { verifyToken } from "@/lib/token";
 

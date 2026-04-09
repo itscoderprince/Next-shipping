@@ -1,9 +1,10 @@
 import { connectDB } from "@/configs/connectDB";
-import { catchError, generateOTP, response } from "@/lib/helper";
 import userModel from "@/models/user.model";
 import { sendEmail } from "@/configs/sendMail";
 import Otp from "@/models/otp.model";
 import { otpEmail } from "@/emails/otpEmail";
+import { catchError, response } from "@/lib/server-helper";
+import { generateOTP } from "@/lib/helper";
 
 export async function POST(req) {
   try {
@@ -28,7 +29,7 @@ export async function POST(req) {
     const otpEmailStatus = await sendEmail(
       "Resend OTP request from the Panda Bees",
       email,
-      otpEmail(otp)
+      otpEmail(otp),
     );
 
     if (!otpEmailStatus.success) {

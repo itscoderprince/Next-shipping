@@ -12,7 +12,6 @@ import {
   Image as ImageIcon,
   Settings2,
 } from "lucide-react"
-
 import Image from "next/image"
 
 import { NavMain } from "@/components/nav-main"

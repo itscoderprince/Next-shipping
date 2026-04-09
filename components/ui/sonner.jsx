@@ -26,7 +26,7 @@ const Toaster = ({ ...props }) => {
       toastOptions={{
         classNames: {
           toast:
-            "group toast bg-background text-foreground border-border border shadow-lg !rounded-full px-5 py-2.5! gap-3.5 font-sans text-[14px] font-semibold leading-snug !w-auto",
+            "group toast bg-background text-foreground border-border border shadow-md !rounded-full px-5 py-2.5! gap-4 font-sans text-[16px] font-semibold leading-snug !w-auto",
           description: "group-[.toast]:text-muted-foreground",
           actionButton:
             "group-[.toast]:bg-primary group-[.toast]:text-primary-foreground",
@@ -37,22 +37,22 @@ const Toaster = ({ ...props }) => {
       icons={{
         success: (
           <CheckCircle2
-            strokeWidth={3}
+            strokeWidth={2}
             className="w-6 h-6 text-white fill-emerald-500"
           />
         ),
         error: (
           <XCircle
-            strokeWidth={3}
+            strokeWidth={2}
             className="w-6 h-6 text-white fill-red-500"
           />
         ),
         info: (
-          <Info strokeWidth={3} className="w-6 h-6 text-white fill-blue-500" />
+          <Info strokeWidth={2} className="w-6 h-6 text-white fill-blue-500" />
         ),
         warning: (
           <AlertTriangle
-            strokeWidth={3}
+            strokeWidth={2}
             className="w-6 h-6 text-white fill-amber-500"
           />
         ),

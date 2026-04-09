@@ -12,22 +12,23 @@ import { Button } from "@/components/ui/button";
  * @param {React.ReactNode} children - Button content
  * @param {string} variant - Shadcn button variants (default, outline, ghost, etc.)
  */
-const UIButton = ({ 
-  className, 
-  loading = false, 
-  children, 
-  variant = "default", 
+const UIButton = ({
+  className,
+  loading = false,
+  children,
+  variant = "default",
   size = "default",
-  ...props 
+  ...props
 }) => {
   return (
     <Button
       className={cn(
         "relative transition-all duration-300 font-heading font-semibold rounded-lg cursor-pointer",
         // Default Violet Theme for primary buttons
-        variant === "default" && "bg-violet-600 hover:bg-violet-700 text-white shadow-sm hover:shadow-violet-200/50 hover:shadow-xl active:scale-[0.98]",
+        variant === "default" &&
+          "bg-violet-600 hover:bg-violet-700 text-white shadow-sm hover:shadow-violet-200/50 hover:shadow-sm active:scale-[0.98]",
         loading && "text-transparent pointer-events-none",
-        className
+        className,
       )}
       variant={variant}
       size={size}
@@ -39,7 +40,12 @@ const UIButton = ({
           <Loader2 className="h-4 w-4 animate-spin text-white" />
         </div>
       )}
-      <span className={cn("inline-flex items-center gap-2", loading ? "opacity-0" : "opacity-100")}>
+      <span
+        className={cn(
+          "inline-flex items-center gap-2",
+          loading ? "opacity-0" : "opacity-100",
+        )}
+      >
         {children}
       </span>
     </Button>

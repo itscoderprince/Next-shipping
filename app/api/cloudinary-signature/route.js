@@ -1,6 +1,6 @@
 import cloudinary from "@/configs/cloudinary";
 import env from "@/configs/env";
-import { catchError } from "@/lib/helper";
+import { catchError } from "@/lib/server-helper";
 import { NextResponse } from "next/server";
 
 export async function POST(req) {

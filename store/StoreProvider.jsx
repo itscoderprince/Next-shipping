@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "./store";
@@ -13,7 +14,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
 // Global Store Provider mapping React to Redux
 export default function StoreProvider({ children }) {
-  const queryClient = new QueryClient();
+  const [queryClient] = useState(() => new QueryClient());
 
   return (
     <QueryClientProvider client={queryClient}>

@@ -1,6 +1,6 @@
 export const ADMIN_ROUTES = {
   DASHBOARD: "/admin/dashboard",
-  CATEGORIES: "/admin/categories",
+  CATEGORIES: "/admin/category",
   PRODUCTS: "/admin/products",
   COUPONS: "/admin/coupons",
   ORDERS: "/admin/orders",
@@ -14,3 +14,7 @@ export const ADMIN_ROUTES = {
 
 export const ADMIN_MEDIA_SHOW = "/admin/media";
 export const ADMIN_MEDIA_EDIT = (id) => (id ? `/admin/media/edit/${id}` : "");
+
+export const ADMIN_TRASH = "/admin/trash";
+export const ADMIN_CATEGORY_EDIT = (id) =>
+  id ? `/admin/category/edit/${id}` : "";

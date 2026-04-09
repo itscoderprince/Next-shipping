@@ -1,5 +1,5 @@
 import { connectDB } from "@/configs/connectDB";
-import { catchError, isAuthenticated, response } from "@/lib/helper";
+import { catchError, isAuthenticated, response } from "@/lib/server-helper";
 import { editMediaSchema } from "@/lib/zSchema";
 import Media from "@/models/media.model";
 

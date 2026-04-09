@@ -1,6 +1,6 @@
 import { connectDB } from "@/configs/connectDB";
 import { verifyOtpSchema } from "@/lib/zSchema";
-import { catchError, response } from "@/lib/helper";
+import { catchError, response } from "@/lib/server-helper";
 import Otp from "@/models/otp.model";
 import userModel from "@/models/user.model";
 import { generateToken } from "@/lib/token";

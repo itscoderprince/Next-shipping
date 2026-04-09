@@ -1,6 +1,7 @@
 import { connectDB } from "@/configs/connectDB";
 import { forgotPasswordSchema } from "@/lib/zSchema";
-import { catchError, generateOTP, response } from "@/lib/helper";
+import { catchError, response } from "@/lib/server-helper";
+import { generateOTP } from "@/lib/helper";
 import userModel from "@/models/user.model";
 import { sendEmail } from "@/configs/sendMail";
 import Otp from "@/models/otp.model";

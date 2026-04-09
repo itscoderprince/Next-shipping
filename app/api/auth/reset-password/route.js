@@ -1,6 +1,6 @@
 import { connectDB } from "@/configs/connectDB";
 import { resetPasswordSchema } from "@/lib/zSchema";
-import { catchError, response } from "@/lib/helper";
+import { catchError, response } from "@/lib/server-helper";
 import userModel from "@/models/user.model";
 import Otp from "@/models/otp.model";
 
