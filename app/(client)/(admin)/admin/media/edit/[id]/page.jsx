@@ -12,6 +12,8 @@ import Image from "next/image";
 import axios from "axios";
 import { toast } from "sonner";
 import { Label } from "@/components/ui/label";
+import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 const EditMedia = ({ params }) => {
   const { id } = use(params);
@@ -62,9 +64,28 @@ const EditMedia = ({ params }) => {
 
   return (
     <Card className="sm:py-4 py-2 gap-3 sm:gap-6">
-      <CardHeader className="border-b pb-3">
-        <h4 className="text-xl font-semibold">Edit Media</h4>
-        <p className="text-sm text-gray-500">Update the alt text and title for this media file.</p>
+      <CardHeader className="w-full border-b [.border-b]:pb-3">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <div>
+              <h1 className="text-xl font-bold text-red-600 flex items-center gap-2">
+                {config.title}
+                <span className="text-xs font-normal italic text-gray-400 font-sans ml-1">
+                  Edit Category
+                </span>
+              </h1>
+              <p className="text-sm text-gray-500">
+                Update your category details below
+              </p>
+            </div>
+          </div>
+          <Link href={config.backUrl}>
+            <UIButton className="gap-2 group" variant="outline">
+              <ArrowLeft className="size-4 group-hover:-translate-x-1 transition-transform" />
+              {config.backTitle}
+            </UIButton>
+          </Link>
+        </div>
       </CardHeader>
 
       <CardContent className="flex flex-col sm:flex-row gap-6">
@@ -82,7 +103,11 @@ const EditMedia = ({ params }) => {
         )}
 
         {/* Edit Form */}
-        <form onSubmit={handleSubmit(onSubmit)} noValidate className="flex flex-col gap-4 flex-1">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          noValidate
+          className="flex flex-col gap-4 flex-1"
+        >
           {/* Hidden _id field */}
           <input type="hidden" {...register("_id")} />
 
@@ -95,7 +120,9 @@ const EditMedia = ({ params }) => {
               placeholder="Describe the image for accessibility"
               {...register("alt")}
             />
-            {errors.alt && <p className="text-sm text-red-500">{errors.alt.message}</p>}
+            {errors.alt && (
+              <p className="text-sm text-red-500">{errors.alt.message}</p>
+            )}
           </div>
 
           {/* Title Field */}
@@ -107,10 +134,16 @@ const EditMedia = ({ params }) => {
               placeholder="Media title"
               {...register("title")}
             />
-            {errors.title && <p className="text-sm text-red-500">{errors.title.message}</p>}
+            {errors.title && (
+              <p className="text-sm text-red-500">{errors.title.message}</p>
+            )}
           </div>
 
-          <UIButton type="submit" loading={isSubmitting} className="w-full sm:w-auto">
+          <UIButton
+            type="submit"
+            loading={isSubmitting}
+            className="w-full sm:w-auto"
+          >
             Save Changes
           </UIButton>
         </form>

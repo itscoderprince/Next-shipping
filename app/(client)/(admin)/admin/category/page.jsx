@@ -109,7 +109,7 @@ const Category = () => {
   const isPending = createMutation.isPending;
 
   return (
-    <Card className="sm:py-4 py-2 gap-3 sm:gap-2">
+    <Card className="sm:py-4 py-2 gap-3 sm:gap-0">
       <CardHeader className="w-full flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b [.border-b]:pb-3">
         <div>
           <h1 className="text-xl font-bold">Category</h1>
@@ -179,7 +179,7 @@ const Category = () => {
           </Dialog>
         </div>
       </CardHeader>
-      <CardContent className="mt-4">
+      <CardContent className="mt-2">
         <DatatableWrapper
           queryKey="category-data"
           fetchUrl="/api/category"

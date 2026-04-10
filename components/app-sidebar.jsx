@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import * as React from "react"
+import * as React from "react";
 import {
   LayoutDashboard,
   Layers,
@@ -11,12 +11,12 @@ import {
   Star,
   Image as ImageIcon,
   Settings2,
-} from "lucide-react"
-import Image from "next/image"
+} from "lucide-react";
+import Image from "next/image";
 
-import { NavMain } from "@/components/nav-main"
-import { NavProjects } from "@/components/nav-projects"
-import { NavUser } from "@/components/nav-user"
+import { NavMain } from "@/components/nav-main";
+import { NavProjects } from "@/components/nav-projects";
+import { NavUser } from "@/components/nav-user";
 import {
   Sidebar,
   SidebarContent,
@@ -28,9 +28,9 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/components/ui/sidebar"
-import Link from "next/link"
-import { ADMIN_ROUTES } from "@/routes/Admin.route"
+} from "@/components/ui/sidebar";
+import Link from "next/link";
+import { ADMIN_ROUTES } from "@/routes/Admin.route";
 
 // Ecommerce Admin specific configuration data
 const data = {
@@ -42,7 +42,7 @@ const data = {
   navMain: [
     {
       title: "Category",
-      url: ADMIN_ROUTES.CATEGORIES,
+      url: ADMIN_ROUTES.CATEGORY.SHOW,
       icon: Layers,
       isActive: true,
       items: [
@@ -52,7 +52,7 @@ const data = {
         },
         {
           title: "Add New",
-          url: `${ADMIN_ROUTES.CATEGORIES}/add`,
+          url: ADMIN_ROUTES.CATEGORY.SHOW,
         },
       ],
     },
@@ -124,7 +124,7 @@ const data = {
       icon: ImageIcon,
     },
   ],
-}
+};
 
 export function AppSidebar({ ...props }) {
   return (
@@ -132,8 +132,15 @@ export function AppSidebar({ ...props }) {
       <SidebarHeader className="flex h-16 shrink-0 items-center justify-center border-b px-2 transition-all duration-300 group-data-[collapsible=icon]:h-12">
         <SidebarMenu className="transition-all duration-300">
           <SidebarMenuItem>
-            <SidebarMenuButton size="lg" asChild className="hover:bg-transparent">
-              <Link href={ADMIN_ROUTES.DASHBOARD} className="flex items-center gap-3 w-full group-data-[collapsible=icon]:justify-center">
+            <SidebarMenuButton
+              size="lg"
+              asChild
+              className="hover:bg-transparent"
+            >
+              <Link
+                href={ADMIN_ROUTES.DASHBOARD}
+                className="flex items-center gap-3 w-full group-data-[collapsible=icon]:justify-center"
+              >
                 <div className="flex aspect-square size-9 shrink-0 items-center justify-center rounded-lg border bg-background shadow-sm hover:ring-1 ring-zinc-200 transition-all">
                   <Image
                     src="/images/favicon.ico"
@@ -144,7 +151,9 @@ export function AppSidebar({ ...props }) {
                 </div>
                 <div className="grid flex-1 text-left text-sm leading-tight group-data-[collapsible=icon]:hidden">
                   <span className="truncate font-bold text-lg">PandaBees</span>
-                  <span className="truncate text-xs text-muted-foreground font-medium">Administration</span>
+                  <span className="truncate text-xs text-muted-foreground font-medium">
+                    Administration
+                  </span>
                 </div>
               </Link>
             </SidebarMenuButton>
@@ -154,7 +163,9 @@ export function AppSidebar({ ...props }) {
 
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel className="group-data-[collapsible=icon]:hidden">Main Navigation</SidebarGroupLabel>
+          <SidebarGroupLabel className="group-data-[collapsible=icon]:hidden">
+            Main Navigation
+          </SidebarGroupLabel>
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton asChild tooltip="Dashboard">
@@ -175,5 +186,5 @@ export function AppSidebar({ ...props }) {
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
-  )
+  );
 }

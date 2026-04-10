@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-react": "^11.1.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@hookform/resolvers": "^5.2.2",
@@ -20,9 +21,12 @@
     "@tanstack/react-query-devtools": "^5.96.2",
     "axios": "^1.14.0",
     "bcryptjs": "^3.0.3",
+    "ckeditor5": "^48.0.0",
     "class-variance-authority": "^0.7.1",
     "cloudinary": "^2.9.0",
     "clsx": "^2.1.1",
+    "cmdk": "^1.1.1",
+    "entities": "^8.0.0",
     "export-to-csv": "^1.4.0",
     "input-otp": "^1.4.2",
     "jose": "^6.2.2",
